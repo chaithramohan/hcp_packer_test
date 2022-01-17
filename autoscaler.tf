@@ -44,7 +44,7 @@ resource "google_compute_instance_template" "foobar" {
     foo = "bar"
   }
   service_account {
-    email = ["deploymentautoscaler@internal-interview-candidates.iam.gserviceaccount.com"]
+    email = "deploymentautoscaler@internal-interview-candidates.iam.gserviceaccount.com"
     scopes = ["cloud-platform"]
   }
 
