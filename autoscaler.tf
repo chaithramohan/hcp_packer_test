@@ -45,6 +45,7 @@ resource "google_compute_instance_template" "foobar" {
   }
   service_account {
     email = ["deploymentautoscaler@internal-interview-candidates.iam.gserviceaccount.com"]
+    scopes = ["cloud-platform"]
   }
 
 }
