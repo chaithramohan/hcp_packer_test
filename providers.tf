@@ -8,3 +8,4 @@ terraform {
     bucket = "casestudy_state_bucket"
     prefix = "terraform/state"
   }
+}
