@@ -8,5 +8,5 @@ resource "google_compute_firewall" "rules" {
     ports     = ["80", "8080", "1000-2000"]
   }
 
-  source_tags = ["0.0.0.0/0"]
+  source_ranges = ["0.0.0.0/0"]
 }
