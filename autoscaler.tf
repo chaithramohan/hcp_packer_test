@@ -43,7 +43,9 @@ resource "google_compute_instance_template" "foobar" {
   metadata = {
     foo = "bar"
   }
-
+  service_account {
+    scopes = ["deploymentautoscaler@internal-interview-candidates.iam.gserviceaccount.com"]
+  }
 
 }
 
