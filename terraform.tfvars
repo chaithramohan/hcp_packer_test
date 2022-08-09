@@ -1,2 +1,2 @@
-project_id = "internal-interview-candidates"
-region= "europe-west1"
+project_id = "sandbox-db-enablers"
+region= "europe-west2"
