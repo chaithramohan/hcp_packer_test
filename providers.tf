@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = "acm-bucket"
+    bucket = "latest-cm"
     prefix = "terraform/state"
   }
 }
