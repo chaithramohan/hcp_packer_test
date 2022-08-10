@@ -24,6 +24,7 @@ resource "google_gke_hub_feature" "feature" {
 resource "google_gke_hub_feature_membership" "feature_member" {
   location = "global"
   feature = google_gke_hub_feature.feature.name
+  project = var.project_id
   membership = google_gke_hub_membership.membership.membership_id
   configmanagement {
     version = "1.8.0"
