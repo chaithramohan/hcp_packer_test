@@ -15,9 +15,9 @@ resource "google_gke_hub_membership" "membership" {
   }
   provider = google-beta
 }
-resource "google_gke_hub_feature" "feature" {
+/*resource "google_gke_hub_feature" "feature" {
   name = "configmanagement"
   location = "global"
   provider = google-beta
   project  = var.project_id
-}
+}*/
