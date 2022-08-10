@@ -27,7 +27,7 @@ resource "google_gke_hub_feature_membership" "feature_member" {
   project = var.project_id
   membership = google_gke_hub_membership.membership.membership_id
   configmanagement {
-    version = "1.8.0"
+    version = "1.12.1"
     config_sync {
       git {
        sync_repo = "https://github.com/terraform-google-modules/terraform-google-kubernetes-engine.git"
