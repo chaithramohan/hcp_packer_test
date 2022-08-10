@@ -15,13 +15,13 @@ resource "google_gke_hub_membership" "membership" {
   }
   provider = google-beta
 }
-/*resource "google_gke_hub_feature" "feature" {
+resource "google_gke_hub_feature" "feature" {
   name = "configmanagement"
   location = "global"
   provider = google-beta
   project  = var.project_id
-}*/
-resource "google_gke_hub_feature_membership" "feature_member" {
+}
+/*resource "google_gke_hub_feature_membership" "feature_member" {
   location = "global"
   feature = google_gke_hub_feature.feature.name
   membership = google_gke_hub_membership.membership.membership_id
@@ -37,4 +37,4 @@ resource "google_gke_hub_feature_membership" "feature_member" {
     }
   }
   provider = google-beta
-}
+}*/
