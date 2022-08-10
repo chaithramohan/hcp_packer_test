@@ -5,3 +5,17 @@ resource "google_container_cluster" "cluster" {
   initial_node_count = 1
   provider = google-beta
 }
+resource "google_gke_hub_membership" "membership" {
+  membership_id = "my-membership"
+  endpoint {
+    gke_cluster {
+      resource_link = "//container.googleapis.com/${google_container_cluster.cluster.id}"
+    }
+  }
+  provider = google-beta
+}
+resource "google_gke_hub_feature" "feature" {
+  name = "configmanagement"
+  location = "global"
+  provider = google-beta
+}
