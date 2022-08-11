@@ -50,7 +50,7 @@ resource "google_gke_hub_feature_membership" "feature_member" {
       git {
        sync_repo = "https://github.com/chaithramohan/private-acm-test"
         sync_branch = "main"
-   policy_dir = default
+  
         secret_type = "none"
       }
     }
