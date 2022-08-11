@@ -31,8 +31,8 @@ resource "google_gke_hub_feature" "feature" {
     config_sync {
       git {
        sync_repo = "https://github.com/chaithramohan/example-config-repo.git"
-        sync_branch = "main"
-   policy_dir = "main"
+        sync_branch = "1.0.0"
+   policy_dir = "foo-corp"
         secret_type = "none"
       }
     }
@@ -49,8 +49,8 @@ resource "google_gke_hub_feature_membership" "feature_member" {
     config_sync {
       git {
        sync_repo = "https://github.com/chaithramohan/private-acm-test"
-        sync_branch = "1.0.0"
-   policy_dir = "foo-corp"
+        sync_branch = "main"
+   policy_dir = "main"
         secret_type = "none"
       }
     }
