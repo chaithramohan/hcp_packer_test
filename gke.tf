@@ -21,7 +21,7 @@ resource "google_gke_hub_feature" "feature" {
   provider = google-beta
   project  = var.project_id
 }
-resource "google_gke_hub_feature_membership" "feature_member" {
+/*resource "google_gke_hub_feature_membership" "feature_member" {
   location = "global"
   feature = google_gke_hub_feature.feature.name
   project = var.project_id
@@ -31,6 +31,24 @@ resource "google_gke_hub_feature_membership" "feature_member" {
     config_sync {
       git {
        sync_repo = "https://github.com/chaithramohan/example-config-repo.git"
+        sync_branch = "main"
+   policy_dir = "main"
+        secret_type = "none"
+      }
+    }
+  }
+  provider = google-beta
+}*/
+resource "google_gke_hub_feature_membership" "feature_member" {
+  location = "global"
+  feature = google_gke_hub_feature.feature.name
+  project = var.project_id
+  membership = google_gke_hub_membership.membership.membership_id
+  configmanagement {
+    version = "1.12.1"
+    config_sync {
+      git {
+       sync_repo = "https://github.com/chaithramohan/private-acm-test"
         sync_branch = "1.0.0"
    policy_dir = "foo-corp"
         secret_type = "none"
@@ -38,4 +56,4 @@ resource "google_gke_hub_feature_membership" "feature_member" {
     }
   }
   provider = google-beta
-}
+}  
