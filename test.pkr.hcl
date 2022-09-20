@@ -17,13 +17,14 @@ data "hcp-packer-image" "basic-example" {
   cloud_provider = "gce"
   region         = "us-central1-a"
 }
+
 source "googlecompute" "basic-example" {
   project_id   = "burner-chamohan3"
   source_image = "debian-9-stretch-v20200805"
   image_name   = "packercm-{{timestamp}}"
   ssh_username = "cm"
   zone         = "us-central1-a"
-  #account_file = "/home/chaithra/service_account.json"
+  account_file = ""
   tags         = ["packer", "packer-allow-ssh"]
 }
 build {
